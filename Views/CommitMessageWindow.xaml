@@ -1,0 +1,16 @@
+<Window x:Class="GithubManager.Views.CommitMessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="填写 commit message" Height="200" Width="420"
+        Background="{StaticResource BgBrush}" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <StackPanel Margin="16">
+        <TextBlock Text="提交说明" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,8"/>
+        <TextBox x:Name="MessageBox" Text="{Binding CommitMessage, UpdateSourceTrigger=PropertyChanged}"
+                 AcceptsReturn="False"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+            <Button Content="确定" Click="Ok_Click" FontWeight="Bold" IsDefault="True"/>
+            <Button Content="取消" Click="Cancel_Click" IsCancel="True"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
